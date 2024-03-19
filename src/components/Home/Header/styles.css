@@ -1,6 +1,17 @@
 .home-header {
   text-align: center;
 }
+.login-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #cdbdbd;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
 
 .home-header h2 {
   color: #0080ff;
