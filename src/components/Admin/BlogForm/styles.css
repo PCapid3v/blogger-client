@@ -1,0 +1,49 @@
+.blog-form {
+  margin-bottom: 40px;
+  
+}
+
+.blog-form h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.blog-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-form .form-group {
+  margin-bottom: 20px;
+}
+
+.blog-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.blog-form input,
+.blog-form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.blog-form textarea {
+  height: 200px;
+}
+
+.blog-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.blog-form button:hover {
+  background-color: #0056b3;
+}
