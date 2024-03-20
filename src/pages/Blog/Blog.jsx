@@ -1,9 +1,6 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router";
-import { blogList } from "../../config/data";
-
 import "./styles.css";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import EmptyList from "../../components/common/EmptyList/EmptyList";
 import Chip from "../../components/common/Chip/Chip.jsx";
 
@@ -12,11 +9,17 @@ const Blog = () => {
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
-    let blog = blogList.find((blog) => blog.id === parseInt(id));
-    if (blog) {
-      setBlog(blog);
-    }
-  }, []);
+    fetch(`http://localhost:4000/posts/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+
+        console.log(data.data)
+        setBlog(data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [id]);
 
   return (
     <>
@@ -26,18 +29,16 @@ const Blog = () => {
       {blog ? (
         <div className="blog-wrap">
           <header>
-            <p className="blog-date">Published {blog.createdAt}</p>
+            <p className="blog-date">
+              Published {new Date(blog.updatedAt).toLocaleDateString()}
+            </p>
             <h1>{blog.title}</h1>
             <div className="blog-subCategory">
-              {blog.subCategory.map((category, i) => (
-                <div key={i}>
-                  <Chip label={category} />
-                </div>
-              ))}
+              <Chip label={blog.category} />
             </div>
           </header>
-          <img src={blog.cover} alt="cover" />
-          <p className="blog-desc">{blog.description}</p>
+          {blog.cover && <img src={blog.cover} alt="cover" />}
+          <p className="blog-desc">{blog.content}</p>
         </div>
       ) : (
         <EmptyList />
