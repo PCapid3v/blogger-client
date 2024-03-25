@@ -23,7 +23,7 @@ const BlogForm = () => {
         authorAvatar,
         authorId: parseInt(authorId),
       };
-      const response = await fetch("http://localhost:4000/posts", {
+      const response = await fetch("http://16.171.5.84:4000/posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
