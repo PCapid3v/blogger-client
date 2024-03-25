@@ -14,12 +14,12 @@ const Home = () => {
   },[])
   
   const fetchBlogs = () => {
-    fetch("http://localhost:4000/posts")
+    fetch("http://16.171.5.84:4000/posts")
       .then((res) => res.json())
       .then((data) => {
-        const posts = data.data.posts
-          setBlogs(posts)
-      })
+        const posts = data.data.posts;
+        setBlogs(posts);
+      });
   }
 
 
