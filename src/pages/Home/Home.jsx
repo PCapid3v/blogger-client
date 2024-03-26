@@ -14,7 +14,7 @@ const Home = () => {
   },[])
   
   const fetchBlogs = () => {
-    fetch("http://16.171.5.84:4000/posts")
+    fetch("https://blogger-server-aa82.onrender.com/posts")
       .then((res) => res.json())
       .then((data) => {
         const posts = data.data.posts;

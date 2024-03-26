@@ -9,7 +9,7 @@ const Blog = () => {
   const [blog, setBlog] = useState(null);
 
   useEffect(() => {
-    fetch(`http://16.171.5.84:4000/posts/${id}`)
+    fetch(`https://blogger-server-aa82.onrender.com/posts/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data.data);

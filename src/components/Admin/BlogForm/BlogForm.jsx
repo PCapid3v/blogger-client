@@ -23,13 +23,16 @@ const BlogForm = () => {
         authorAvatar,
         authorId: parseInt(authorId),
       };
-      const response = await fetch("http://16.171.5.84:4000/posts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newPost),
-      });
+      const response = await fetch(
+        "https://blogger-server-aa82.onrender.com/posts",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newPost),
+        }
+      );
       if (response.ok) {
         console.log("New blog post created:", newPost);
         // Reset form fields after successful submission
