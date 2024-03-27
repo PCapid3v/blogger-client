@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-// import { blogList } from "../../config/data";
+import { blogList } from "../../config/data";
 import BlogList from "../../components/Home/BlogList/BlogList";
 import Header from "../../components/Home/Header/Header";
 import SearchBar from "../../components/Home/SearchBar/SearchBar";
 import EmptyList from "../../components/common/EmptyList/EmptyList";
 
 const Home = () => {
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState(blogList);
   const [searchKey, setSearchKey] = useState("");
+  console.log(blogList)
 
   useEffect(() => {
     fetchBlogs()
