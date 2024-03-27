@@ -8,8 +8,8 @@ const Header = () => (
       <span>“</span> Blog <span>”</span>
     </h1>
     <p>awesome place to share your ideas </p>
-    <Link className="login-button" to="/login">
-      Login
+    <Link className="create-blog-button" to="/Admin">
+      Create Blog
     </Link>
   </header>
 );
